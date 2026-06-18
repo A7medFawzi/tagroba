@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spiro Spathis | Pure Zero Refreshment</title>
-    <meta name="description" content="Experience the crisp, clean taste of Spiro Spathis soda.">
+    <title>Spiro Spathis | Sparkling Soda Experience</title>
+    <meta name="description" content="A cinematic landing page for Spiro Spathis lemon soda and red apple soda.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;500&family=Manrope:wght@400;700&family=Galada&display=swap" rel="stylesheet">
@@ -21,9 +20,9 @@
             --glass-border: rgba(255, 255, 255, 0.1);
             --font-main: 'Inter', sans-serif;
             --font-heading: 'Galada', cursive;
-            --bg-inner: #0b8a78;
-            --bg-mid: #044e3b;
-            --bg-outer: #011411;
+            --bg-inner: #129447;
+            --bg-mid: #064525;
+            --bg-outer: #020f09;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,9 +37,9 @@
         }
 
         body.red-theme {
-            --bg-inner: #9f1313;
-            --bg-mid: #510808;
-            --bg-outer: #170202;
+            --bg-inner: #b90d17;
+            --bg-mid: #5b060b;
+            --bg-outer: #170203;
         }
 
         #bubbles-container { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
@@ -65,7 +64,24 @@
         .hero { height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0 4%; padding-top: 5rem; }
         .hero-content { display: flex; justify-content: space-between; align-items: stretch; width: 100%; max-width: 100%; padding: 0; height: 100%; position: relative; }
 
-        .main-title, .side-title { font-family: var(--font-heading); font-size: clamp(5rem, 10vw, 12rem); line-height: 0.8; font-weight: 400; white-space: nowrap; color: white; }
+        .main-title {
+            font-family: var(--font-heading);
+            font-size: clamp(5rem, 9vw, 10rem);
+            line-height: 0.8;
+            font-weight: 400;
+            white-space: nowrap;
+            color: white;
+        }
+
+        .side-title {
+            font-family: var(--font-heading);
+            font-size: clamp(4rem, 7vw, 8rem);
+            line-height: 0.82;
+            font-weight: 400;
+            white-space: nowrap;
+            color: white;
+            max-width: 650px;
+        }
         .outline { color: var(--text-color); }
 
         .leaves-container { position: absolute; inset: 0; pointer-events: none; z-index: -1; transition: transform 0.1s ease-out; }
@@ -75,7 +91,16 @@
         .l3 { top: 70%; left: 75%; width: 80px; height: 80px; }
         .l4 { top: 85%; left: 20%; width: 120px; height: 120px; opacity: 0.3; }
 
-        .hero-left { display: flex; flex-direction: column; height: 100%; padding: 6rem 0; gap: 2rem; z-index: 100; }
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 6rem 0;
+            gap: 2rem;
+            z-index: 100;
+            width: 38%;
+            min-width: 430px;
+        }
         .description { color: var(--muted-color); font-size: 1.1rem; line-height: 1.6; max-width: 400px; }
         .primary-btn { display: flex; align-items: center; gap: 1.5rem; background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 0.4rem 0.4rem 0.4rem 1.5rem; border-radius: 100px; font-weight: 700; cursor: pointer; width: fit-content; transition: all 0.3s ease; }
         .primary-btn:hover { background: rgba(0, 0, 0, 0.7); transform: translateY(-3px); }
@@ -87,21 +112,31 @@
         .award-subtitle { font-size: 0.85rem; font-weight: 600; }
 
         .hero-center {
-            display: flex; justify-content: center; align-items: center; position: absolute; inset: 0; z-index: 1; opacity: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            opacity: 0;
             animation: fadeIn 1.5s ease-out 0.3s forwards, float 6s ease-in-out infinite;
-            pointer-events: none; background: radial-gradient(circle at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+            background: radial-gradient(circle at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+            overflow: visible;
         }
         @keyframes fadeIn { to { opacity: 1; } }
         @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
         .main-product-can {
-            width: min(32vw, 470px);
-            max-width: 34vw;
+            width: min(22vw, 300px);
+            max-height: 72vh;
             height: auto;
             z-index: 1;
             position: fixed;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%) rotate(25deg);
+            top: 52%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(8deg);
+            transform-origin: center center;
             transform-style: preserve-3d;
             will-change: transform, filter;
             pointer-events: none;
@@ -113,23 +148,59 @@
         .berries-container { z-index: 110; }
         .berries-container-bg { z-index: 0; }
         .berry { position: absolute; width: 120px; height: 120px; outline: none; --progress-bar-color: transparent; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3)); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
-        .b1 { top: 25%; left: 30%; width: 220px; height: 220px; }
-        .b2 { top: 60%; left: 42%; width: 100px; height: 100px; }
-        .b3 { top: 30%; left: 62%; width: 250px; height: 250px; }
-        .b4 { top: 15%; left: 48%; width: 140px; height: 140px; }
-        .b5 { top: 75%; left: 20%; width: 120px; height: 120px; }
-        .b6 { top: 45%; left: 75%; width: 180px; height: 180px; }
+        .b1 { top: 25%; left: 32%; width: 130px; height: 130px; }
+        .b2 { top: 62%; left: 42%; width: 70px; height: 70px; }
+        .b3 { top: 30%; left: 61%; width: 145px; height: 145px; }
+        .b4 { top: 18%; left: 49%; width: 90px; height: 90px; }
+        .b5 { top: 75%; left: 23%; width: 80px; height: 80px; }
+        .b6 { top: 48%; left: 74%; width: 110px; height: 110px; }
         .b7 { top: 15%; left: 40%; width: 80px; height: 80px; opacity: 0.7; }
         .b8 { top: 50%; left: 55%; width: 70px; height: 70px; opacity: 0.6; }
         .b9 { top: 80%; left: 35%; width: 75px; height: 75px; opacity: 0.7; }
 
-        .hero-right { display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; text-align: right; height: 100%; padding: 6rem 0; z-index: 100; width: 450px; pointer-events: none; }
-        .product-carousel { display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-end; pointer-events: auto; }
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            text-align: right;
+            height: 100%;
+            padding: 6rem 0;
+            z-index: 100;
+            width: 34%;
+            min-width: 420px;
+            pointer-events: none;
+            overflow: visible;
+        }
+        .product-carousel {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            align-items: flex-end;
+            pointer-events: auto;
+            transform: translateY(1rem);
+        }
         .carousel-cards { display: flex; gap: 1rem; }
-        .card { background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 1rem; padding-top: 5rem; border-radius: 28px; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; cursor: pointer; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); width: 150px; position: relative; backdrop-filter: blur(10px); text-align: center; }
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 0.9rem;
+            padding-top: 4.2rem;
+            border-radius: 26px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: 135px;
+            position: relative;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
         .card:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255,255,255,0.4); }
         .card.active { border-color: #fbcfe8; border-width: 1px; background: var(--glass-bg); box-shadow: none; }
-        .card img { width: 140px; height: auto; margin-top: -8rem; filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.5)); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important; display: block; will-change: transform; pointer-events: none; }
+        .card img { width: 92px; height: 145px; object-fit: contain; margin-top: -6.8rem; filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.5)); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important; display: block; will-change: transform; pointer-events: none; }
         .card:hover img { transform: translateY(-30px) rotate(-12deg) scale(1.15) !important; }
         .card-info { display: flex; flex-direction: column; font-size: 0.75rem; width: 100%; word-wrap: break-word; }
         .card-info span:first-child { font-weight: 600; }
@@ -137,46 +208,41 @@
         .carousel-nav { display: flex; gap: 1rem; }
         .nav-arrow { background: var(--glass-bg); border: 1px solid var(--glass-border); color: white; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.3s; }
         .nav-arrow:hover { background: rgba(255,255,255,0.1); }
-        .side-title { align-self: flex-end; text-align: right; }
+        .side-title {
+            align-self: flex-end;
+            text-align: right;
+            margin-bottom: 1rem;
+            transform: translateX(0);
+        }
         @keyframes shine { from { transform: translateX(-100%) rotate(45deg); } to { transform: translateX(200%) rotate(45deg); } }
 
         @media (max-width: 1200px) {
-            .main-product-can { width: min(62vw, 360px); max-width: 62vw; top: 42%; }
-            .hero-content { grid-template-columns: 1fr; padding-top: 8rem; }
-            .hero-center { order: -1; }
-            .main-title, .side-title { font-size: 5rem; }
-            .hero-right { align-items: center; text-align: center; width: auto; }
-            .side-title { align-self: center; text-align: center; }
-        }
-    
-        /* FINAL FIX: Strongly reduce the main can size */
-        .main-product-can {
-            width: min(18vw, 255px) !important;
-            max-width: 18vw !important;
-            max-height: 60vh !important;
-            top: 50% !important;
-            left: 50% !important;
-            object-fit: contain !important;
-        }
-
-        @media (max-width: 1200px) {
-            .main-product-can {
-                width: min(34vw, 240px) !important;
-                max-width: 34vw !important;
-                max-height: 54vh !important;
-                top: 45% !important;
-            }
+            .header { padding: 1.2rem 4%; }
+            .nav { display: none; }
+            .hero { padding-top: 4rem; }
+            .hero-content { padding-top: 4rem; }
+            .hero-left { min-width: 0; width: 48%; padding: 5rem 0 3rem; }
+            .hero-right { min-width: 0; width: 42%; padding: 5rem 0 3rem; }
+            .main-product-can { width: min(30vw, 250px); max-width: 30vw; max-height: 62vh; top: 51%; }
+            .main-title { font-size: clamp(4rem, 10vw, 6rem); }
+            .side-title { font-size: clamp(3rem, 7vw, 4.5rem); }
+            .description { font-size: 0.95rem; }
+            .carousel-cards { gap: 0.7rem; }
+            .card { width: 118px; }
+            .card img { width: 78px; height: 125px; }
         }
 
         @media (max-width: 768px) {
-            .main-product-can {
-                width: min(46vw, 215px) !important;
-                max-width: 46vw !important;
-                max-height: 50vh !important;
-                top: 46% !important;
-            }
+            body { overflow: auto; min-height: 100vh; }
+            .hero { min-height: 100vh; height: auto; }
+            .hero-content { flex-direction: column; align-items: flex-start; height: auto; min-height: 100vh; }
+            .hero-left, .hero-right { width: 100%; min-width: 0; height: auto; padding: 5rem 0 1rem; }
+            .hero-center { position: fixed; }
+            .main-product-can { width: min(45vw, 220px); max-width: 45vw; top: 47%; left: 67%; }
+            .hero-right { align-items: flex-start; text-align: left; padding-top: 1rem; }
+            .product-carousel { align-items: flex-start; transform: none; }
+            .side-title { text-align: left; align-self: flex-start; font-size: 4rem; }
         }
-
     </style>
 </head>
 <body>
@@ -188,16 +254,16 @@
                 <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
                 <path d="M12 8V16M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
             </svg>
-            <span>Soda</span>
+            <span>Spiro</span>
         </div>
         <nav class="nav glass">
             <a href="#" class="nav-item active">Home</a>
-            <a href="#" class="nav-item">Ingredients</a>
-            <a href="#" class="nav-item">Taste</a>
-            <a href="#" class="nav-item">Eco</a>
+            <a href="#" class="nav-item">Flavors</a>
+            <a href="#" class="nav-item">Sparkle</a>
+            <a href="#" class="nav-item">Heritage</a>
             <a href="#" class="nav-item">Reviews</a>
         </nav>
-        <button class="contact-btn">Contact Us</button>
+        <button class="contact-btn">Order Now</button>
     </header>
 
     <main class="hero">
@@ -210,10 +276,10 @@
             </div>
 
             <div class="hero-left">
-                <h1 class="main-title large-animation-1"><span class="outline">Pure</span><br>Zero</h1>
-                <p class="description">Unleash the crisp taste of zero sugar. <br>Refreshment redefined in every bubble — <br>all in one sleek design.</p>
+                <h1 class="main-title large-animation-1"><span class="outline">Fresh</span><br>Fizz</h1>
+                <p class="description">Bright soda flavors with a bold sparkling kick. <br>Choose zesty lemon or rich red apple — <br>served cold, clean, and unforgettable.</p>
                 <div class="cta-group">
-                    <button class="primary-btn">Shop Now <span class="plus-icon">+</span></button>
+                    <button class="primary-btn">Explore Flavors <span class="plus-icon">+</span></button>
                 </div>
                 <div class="award-badge">
                     <div class="award-icon">
@@ -223,16 +289,16 @@
                         </svg>
                     </div>
                     <div class="award-text">
-                        <span class="award-title">DESIGN AWARDS</span>
-                        <span class="award-subtitle">PREMIUM BEVERAGE 2025</span>
+                        <span class="award-title">SIGNATURE SODA</span>
+                        <span class="award-subtitle">LEMON · RED APPLE</span>
                     </div>
                 </div>
             </div>
 
             <div class="berries-container-bg">
-                <model-viewer class="berry b7" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="-20deg 110deg 105%"></model-viewer>
-                <model-viewer class="berry b8" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="160deg 45deg 105%"></model-viewer>
-                <model-viewer class="berry b9" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="45deg 20deg 105%"></model-viewer>
+                <model-viewer class="berry b7" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="-20deg 110deg 105%"></model-viewer>
+                <model-viewer class="berry b8" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="160deg 45deg 105%"></model-viewer>
+                <model-viewer class="berry b9" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="45deg 20deg 105%"></model-viewer>
             </div>
 
             <div class="hero-center">
@@ -240,12 +306,12 @@
             </div>
 
             <div class="berries-container">
-                <model-viewer class="berry b1" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="45deg 120deg 105%"></model-viewer>
-                <model-viewer class="berry b2" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="-120deg 45deg 105%"></model-viewer>
-                <model-viewer class="berry b3" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="200deg 90deg 105%"></model-viewer>
-                <model-viewer class="berry b4" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="10deg 20deg 105%"></model-viewer>
-                <model-viewer class="berry b5" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="-45deg 160deg 105%"></model-viewer>
-                <model-viewer class="berry b6" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="80deg 75deg 105%"></model-viewer>
+                <model-viewer class="berry b1" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="45deg 120deg 105%"></model-viewer>
+                <model-viewer class="berry b2" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="-120deg 45deg 105%"></model-viewer>
+                <model-viewer class="berry b3" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="200deg 90deg 105%"></model-viewer>
+                <model-viewer class="berry b4" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="10deg 20deg 105%"></model-viewer>
+                <model-viewer class="berry b5" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="-45deg 160deg 105%"></model-viewer>
+                <model-viewer class="berry b6" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="80deg 75deg 105%"></model-viewer>
             </div>
 
             <div class="hero-right">
@@ -265,7 +331,7 @@
                         <button class="nav-arrow" data-dir="next">→</button>
                     </div>
                 </div>
-                <h2 class="side-title large-animation-1"><span class="outline">Refreshingly</span><br>Clean</h2>
+                <h2 class="side-title large-animation-1"><span class="outline">Sparkling</span><br>Taste</h2>
             </div>
         </div>
     </main>
@@ -321,8 +387,8 @@
             const heroCenter = document.querySelector('.hero-center');
 
             const targetColors = flavor === 'red'
-                ? { inner: '#9f1313', mid: '#510808', outer: '#170202' }
-                : { inner: '#0b8a78', mid: '#044e3b', outer: '#011411' };
+                ? { inner: '#b90d17', mid: '#5b060b', outer: '#170203' }
+                : { inner: '#129447', mid: '#064525', outer: '#020f09' };
 
             gsap.to(body, {
                 '--bg-inner': targetColors.inner,
@@ -399,7 +465,7 @@
                     onComplete: () => {
                         berry.src = flavor === 'red'
                             ? 'https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/cherry.glb'
-                            : 'https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/blueberry.glb';
+                            : 'https://api.getlayers.ai/storage/v1/object/public/public/assets/soda-14ff8a788d/leaves.glb';
                         heroCenter.style.zIndex = 50;
                     }
                 })
@@ -447,7 +513,7 @@
             currentMouse.x += (mouse.x - currentMouse.x) * 0.05;
             currentMouse.y += (mouse.y - currentMouse.y) * 0.05;
 
-            modelViewer.style.transform = `translate(-50%, -50%) rotateZ(${12 + switchSpin}deg) rotateY(${currentMouse.x * 18}deg) rotateX(${-currentMouse.y * 14}deg)`;
+            modelViewer.style.transform = `translate(-50%, -50%) rotateZ(${8 + switchSpin}deg) rotateY(${currentMouse.x * 16}deg) rotateX(${-currentMouse.y * 12}deg)`;
 
             berriesFG.style.transform = `translate(${currentMouse.x * 60}px, ${currentMouse.y * 60}px)`;
             berriesBG.style.transform = `translate(${currentMouse.x * -30}px, ${currentMouse.y * -30}px)`;
@@ -526,6 +592,3 @@
     </script>
 </body>
 </html>
-=======
-
->>>>>>> 8e9980d15c0c0dc1fa056b11ee1e3119c4f727c2

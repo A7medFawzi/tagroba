@@ -535,26 +535,203 @@
             .chips { margin-top: 14px; }
             .chip { padding: 7px 11px; }
         }
-
         @media (max-width: 1120px) {
             body { overflow-y: auto; overflow-x: hidden; }
-            .hero { padding-top: 120px; }
-            .hero-grid { grid-template-columns: 1fr; min-height: auto; gap: 20px; }
-            .product-stage { order: -1; height: 560px; min-height: 520px; }
-            .hero-left, .hero-right { padding: 0; align-items: flex-start; }
-            .hero-right { gap: 28px; align-items: center; }
-            .side-title { font-size: clamp(3.5rem, 14vw, 6rem); }
+
+            .header {
+                padding: 18px 22px;
+                gap: 14px;
+                background: linear-gradient(180deg, rgba(18, 8, 22, .72), rgba(18, 8, 22, 0));
+            }
+
             .nav { display: none; }
-            .noise-strip { display: none; }
-            .main-can { width: min(58vw, 360px); }
+
+            .hero {
+                padding: 118px 22px 58px;
+                min-height: auto;
+                align-items: start;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                gap: 28px;
+            }
+
+            .hero-left {
+                order: 1;
+                padding: 0;
+                align-items: center;
+                text-align: center;
+                gap: 16px;
+            }
+
+            .product-stage {
+                order: 2;
+                width: 100%;
+                height: clamp(380px, 58svh, 520px);
+                min-height: 360px;
+                align-self: center;
+                overflow: visible;
+            }
+
+            .hero-right {
+                order: 3;
+                width: 100%;
+                padding: 0;
+                gap: 24px;
+                align-items: center;
+            }
+
+            .main-title {
+                font-size: clamp(4.2rem, 13vw, 7rem);
+                line-height: .92;
+            }
+
+            .description {
+                max-width: 680px;
+                margin-top: 4px;
+            }
+
+            .main-can {
+                width: min(48vw, 310px);
+                max-height: 500px;
+            }
+
+            .product-stage::before { width: min(82vw, 520px); }
             .product-stage::after { font-size: clamp(4rem, 15vw, 8rem); }
+
+            .product-carousel,
+            .taste-panel { width: min(100%, 560px); }
         }
 
         @media (max-width: 640px) {
-            .header { padding: 18px 18px; }
-            .brand { gap: 10px; }
-            .brand-text strong { font-size: 18px; }
-            .tt-logo { width: 58px; height: 44px; font-size: 30px; border-radius: 12px; }
+            .header {
+                padding: 14px 16px;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .brand { gap: 8px; }
+            .brand-text strong { font-size: 17px; letter-spacing: -0.02em; }
+            .tt-logo { width: 56px; height: 42px; font-size: 29px; border-radius: 12px; }
+            .contact-btn { padding: 10px 15px; font-size: 13px; white-space: nowrap; }
+
+            .hero { padding: 92px 16px 42px; }
+            .hero-grid { gap: 22px; }
+
+            .hero-left { gap: 14px; }
+            .eyebrow { font-size: 12px; padding: 8px 12px; }
+
+            .main-title {
+                font-size: clamp(3.1rem, 16vw, 4.7rem);
+                line-height: .94;
+                letter-spacing: -0.05em;
+            }
+
+            .main-title span,
+            .side-title span { -webkit-text-stroke: .75px rgba(255,255,255,.45); }
+
+            .description {
+                max-width: 100%;
+                font-size: 14.5px;
+                line-height: 1.8;
+                margin-top: 2px;
+            }
+
+            .primary-btn {
+                font-size: 14px;
+                padding: 7px 18px 7px 7px;
+            }
+
+            .plus-icon { width: 36px; height: 36px; font-size: 21px; }
+
+            .product-stage {
+                height: clamp(340px, 52svh, 430px);
+                min-height: 330px;
+                margin-top: 2px;
+            }
+
+            .product-stage::before {
+                width: min(92vw, 370px);
+                opacity: .78;
+                filter: blur(4px);
+            }
+
+            .product-stage::after {
+                font-size: clamp(3.6rem, 20vw, 5.6rem);
+                top: 48%;
+                opacity: .85;
+            }
+
+            .main-can {
+                width: min(56vw, 220px);
+                max-height: 365px;
+                filter: drop-shadow(0 34px 34px rgba(0,0,0,.38));
+            }
+
+            .main-can.switching {
+                opacity: .95;
+                filter: drop-shadow(0 34px 34px rgba(0,0,0,.38));
+                transform: rotate(-7deg) translateY(0) scale(.98);
+            }
+
+            .float-item { opacity: .88; filter: drop-shadow(0 16px 16px rgba(0,0,0,.24)); }
+            .f1 { --w: 56px; top: 18%; right: 13%; }
+            .f2 { --w: 48px; top: 30%; left: 10%; }
+            .f3 { --w: 76px; top: 69%; right: 9%; }
+            .f4 { --w: 54px; bottom: 11%; left: 18%; }
+            .f5 { --w: 42px; top: 57%; left: 13%; }
+            .f6 { --w: 54px; bottom: 18%; right: 26%; }
+
+            .product-carousel { width: 100%; gap: 12px; }
+            .carousel-label { font-size: 18px; }
+
+            .carousel-cards {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+                width: 100%;
+            }
+
+            .card {
+                width: 100%;
+                min-height: 232px;
+                border-radius: 24px;
+                padding: 142px 12px 16px;
+            }
+
+            .card img {
+                top: 14px;
+                width: 82px;
+                height: 124px;
+            }
+
+            .card-info { gap: 6px; }
+            .card-info strong { font-size: 16px; }
+            .card-info span { font-size: 12px; line-height: 1.48; max-width: 120px; }
+
+            .taste-panel {
+                width: 100%;
+                border-radius: 24px;
+                padding: 22px 18px;
+            }
+
+            .taste-panel h3 { font-size: 24px; }
+            .taste-panel p { font-size: 14px; line-height: 1.75; }
+            .chips { justify-content: center; gap: 8px; }
+            .chip { font-size: 11px; padding: 7px 10px; }
+        }
+
+        @media (max-width: 390px) {
+            .brand-text strong { font-size: 15px; }
+            .tt-logo { width: 50px; height: 38px; font-size: 26px; }
+            .contact-btn { padding: 9px 12px; font-size: 12px; }
+            .main-can { width: min(60vw, 210px); }
+            .card { min-height: 224px; padding-top: 136px; }
+            .card img { width: 78px; height: 118px; }
+        }
+
     </style>
 </head>
 <body data-flavor="pineapple">
@@ -680,6 +857,7 @@
 
         const body = document.body;
         const mainCan = document.getElementById('mainCan');
+        mainCan.addEventListener('load', () => mainCan.classList.remove('switching'));
         const cards = document.querySelectorAll('.card');
         const floatItems = document.querySelectorAll('.float-item');
         const heroDesc = document.getElementById('heroDesc');
